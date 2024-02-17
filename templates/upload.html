@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musical Checking</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+        body{
+            font-family: 'Sriracha', cursive;
+        }
+        .holder {
+            height: 300px;
+            width: 300px;
+        }
+
+        .container img {
+            max-width: 100px;
+            max-height: 100px;
+            min-width: 100px;
+            min-height: 100px;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+        }
+
+        .heading {
+            font-family: Montserrat;
+            font-size: 45px;
+            color: green;
+        }
+       
+        .image-logo{
+            display: flex;
+            justify-content: center;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Sriracha', cursive;
+
+          }
+
+:root {
+  --color-primary: #f6aca2;
+  --color-secondary: #f49b90;
+  --color-tertiary: #f28b7d;
+  --color-quaternary: #f07a6a;
+  --color-quinary: #ee6352;
+  /*
+  --color-primary: #5192ED;
+  --color-secondary: #69A1F0;
+  --color-tertiary: #7EAEF2;
+  --color-quaternary: #90BAF5;
+  --color-quinary: #A2C4F5;
+  */
+}
+
+.content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.text_shadows {
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  font-weight: 200;
+  font-size: calc(0.5rem + 4vw);
+  text-align: center;
+  margin: 17px 0 0 0;
+  color: var(--color-primary);
+  //color: transparent;
+  //background-color: white;
+  //background-clip: text;
+  animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+  letter-spacing: 0.4rem;
+}
+
+@keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  20% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  30% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  40% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  50% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  60% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  70% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  80% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  90% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  40% {
+    transform: translate(-12px, -12px);
+  }
+  50% {
+    transform: translate(-12px, -12px);
+  }
+  60% {
+    transform: translate(-12px, -12px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+        .waviy {
+            position: relative;
+            -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+            font-size: 60px;
+            }
+        .waviy span {
+            font-family: 'Alfa Slab One', cursive;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            animation: waviy 1s infinite;
+            animation-delay: calc(.1s * var(--i));
+  
+            }
+            @keyframes waviy {
+                0%,40%,100% {
+                transform: translateY(0)
+            }
+            20% {
+                transform: translateY(-20px)
+            }
+            }
+            .example{
+                background-color: rgb(29, 217, 92);
+                width: 100%;
+                margin-top: 10px;
+                height: 200px;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                justify-content: center;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+            }
+            .flipflap{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            .flipflap span {
+                position: relative;
+                display: inline-block;
+                font-size: 20px;
+                text-transform: uppercase;
+                animation: flip 2s infinite;
+                animation-delay: calc(.2s * var(--i))
+            }
+            .holder {
+            height: 300px;
+            width: 400px;
+            overflow: hidden;
+            border-radius: 70px;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+        }
+
+        .holder img {
+            max-width: 400px;
+            max-height: 300px;
+            min-width: 400px;
+            min-height: 300px;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+        }
+
+        .heading {
+            font-size: 45px;
+            color: white;
+            background-color: rgb(29, 217, 92);
+            width: 100%;
+            margin: 10px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #97DBAE;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .container img{
+            margin-top: 20px;
+        }
+        .flex-duo{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            background-image: url("{{ url_for('static', filename='2.jpg')}}");
+            background-size: cover;
+        }
+        .musical-cont{
+            background-color: #FFC4C4;
+            width: 100%;
+            margin: 0 120px 0 120px;
+            
+            padding: 20px;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;            
+        }
+        .musical-cont h2{
+            text-align: center;
+        }
+        .musical-name{
+            padding: 20px;
+            -moz-column-count: 5;
+            -moz-column-gap: 10px;
+            -webkit-column-count: 5;
+            -webkit-column-gap: 10px;
+            column-count: 5;
+            column-gap: 150px;
+        }
+        .musical-name ol{
+            padding: 0px 0px 0px 30px;
+        }
+        .label-website{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .label-website p{
+            font-size: 40px;
+            width: 700px;
+            margin-top: 20px;
+        }
+        .footer{
+            width: 100%;
+            background-color: #97DBAE;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .card-tae{
+            width: 400px;
+            height: 450px;
+            background-color: #F1E1A6;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+            margin: 20px;
+        }
+        .footer-cont{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .card-goya{
+            width: 400px;
+            height: 450px;
+            background-color: #F1E1A6;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+            margin: 20px;
+        }
+        
+        .card-tae p{
+            text-align: center;
+            font-size: 25px;
+        }
+        .card-goya p{
+            text-align: center;
+            font-size: 25px;
+        }
+        .answer{
+            background-color: #A6D1E6;
+            padding: 20px;
+            margin-top:40px;
+            border-radius: 30px;
+        }
+        .btn{
+            background-color: #e6c037;
+            border: none;
+            color: rgb(0, 0, 0);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 40px;
+            font-family: 'Sriracha', cursive;
+            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            display: inline-block;
+            
+}
+.box-form{
+   width: 400px;
+   position: relative;
+   margin-top: 10px;
+}
+.recommend{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+      
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}     
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+
+<script>
+    $(document).ready(() => {
+        $("#photo").change(function () {
+            const file = this.files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function (event) {
+                    $("#imgPreview")
+                        .attr("src", event.target.result);
+                };
+                reader.readAsDataURL(file);
+                
+                var form_data = new FormData($('#upload-file')[0]);
+                $.ajax({
+                    type: 'POST',
+                    url: '/uploader',
+                    data: form_data,
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function (data) {
+                        console.log('Success!');
+                        $("#prediction").text(data);
+                    },
+                });
+
+            }
+        });
+    });
+</script>
+</head>
+
+<body>
+    
+    <div class="container">
+        <img src = "{{ url_for('static', filename='logo.png')}}">
+        <div style="margin: 0 16px;">
+        <H1>KASETSART UNIVERSITY</H1>
+        <div class="flipflap">
+            <span style="--i:1">K</span>
+            <span style="--i:2">A</span>
+            <span style="--i:3">M</span>
+            <span style="--i:4">P</span>
+            <span style="--i:5">H</span>
+            <span style="--i:6">A</span>
+            <span style="--i:7">E</span>
+            <span style="--i:8">N</span>
+            <span style="--i:8">G</span>
+            <span style="--i:8">S</span>
+            <span style="--i:8">A</span>
+            <span style="--i:8">E</span>
+            <span style="--i:8">N</span>
+            <span style="--i:8">⠀</span>
+            <span style="--i:8">C</span>
+            <span style="--i:8">A</span>
+            <span style="--i:8">M</span>
+            <span style="--i:8">P</span>
+            <span style="--i:8">U</span>
+            <span style="--i:8">S</span>
+           </div>
+        </div>
+        </span>
+        </div>
+        <div class="label-website">
+            <div class="content">
+                <h2 class="text_shadows">Website ทำนายเครื่องดนตรี</h2>
+              </div>
+        </div>
+    <div class="flex-duo">
+    <div class="file-up">
+    <form id="upload-file">
+        <div class="holder">
+            <img id="imgPreview" src="{{ url_for('static', filename='33.jpg')}}" alt="pic" />
+        </div>
+        <div class="box-form">
+        <label for="photo" class="btn">อัพโหลดรูปภาพ</label>
+        <input type="file" name="photograph" id="photo" required="true" style="visibility:hidden;"/>
+         </div>
+        <div class="answer">
+            เครื่องดนตรี : <span id="prediction"></span>
+        </div>
+    </form>
+</div>
+</div>   
+
+<div class="recommend">
+   <div class="musical-cont">
+    <h2>เครื่องดนตรีที่สามารถทำนายได้</h4>
+    <div class="musical-name">
+            <ol>
+                <li>Acordian</li>
+                <li>Alphorn</li>
+                <li>Bagpipes</li>
+                <li>Banjo</li>
+                <li>Bongo Drum</li>
+                <li>Casaba</li>
+                <li>Castanet</li>
+                <li>Clarinet</li>
+                <li>Clavichord</li>
+                <li>Concertina</li>
+                <li>Didgeridoo</li>
+                <li>Drums</li>
+                <li>Dulcimer</li>
+                <li>Flute</li>
+                <li>Guiro</li>
+                <li>Guitar</li>
+                <li>Harmonica</li>
+                <li>Harp</li>
+                <li>Marakas</li>
+                <li>Ocarina</li>
+                <li>Piano</li>
+                <li>Saxaphone</li>
+                <li>Sitar</li>
+                <li>Steel Drum</li>
+                <li>Tambourine</li>
+                <li>Trombone</li>
+                <li>Bagpipes</li>
+                <li>Trumpet</li>
+                <li>Tuba</li>
+                <li>Violin</li>
+                <li>Xylophone</li>
+            </ol>
+    </div>
+    </div> 
+</div>
+<footer class="footer">
+    <h1 style="font-size: 40px;">ผู้พัฒนา Website <br></h1>
+    <div class="footer-cont">
+    <div class="card card-tae">
+        <img src="{{ url_for('static', filename='4.jpg')}}" width="400px">
+        <p>
+            นายธนายุทธ ก๊กบางยาง <br> รหัสนิสิต 6421600361
+        </p>
+    </div>
+    <div class="card card-goya"><img src="{{ url_for('static', filename='5.jpg')}}" width="400px">
+        <p>
+            วณิชชากร อุดมเศรษฐกุล <br> รหัสนิสิต 6421605532
+        </p>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
